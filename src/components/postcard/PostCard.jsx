@@ -1,4 +1,7 @@
 'use client'
+
+import Link from "next/link";
+
 const PostCard = (props) => {
   const { posts } = props;
   return (
@@ -7,13 +10,16 @@ const PostCard = (props) => {
         <div key={post.id}>
           <h3>{post.title}</h3>
           <p>{post.body}</p>
-          <button
+          
+          {/* <button
             onClick={() => {
               alert(post.title);
             }}
-          >
+          > */}
+          <Link href={`/post/${post.id}`}>
             Click me
-          </button>
+          {/* </button> */}
+          </Link>
         </div>
       ))}
     </div>
